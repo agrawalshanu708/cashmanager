@@ -13,34 +13,23 @@ checkButton.addEventListener("click" , function validate() {
   let cg = Math.floor(userPay.value);
 
   if(ba> 0){
-   
     if( cg >= ba ){
        const amountChange = (cg - ba);
        calculateChange(amountChange); 
-      
-    } else {
-       showMessage("wanna wash plates?");
-     
-    }
+      } else {
+       showMessage("Want To Wash Plates?");
+     }
   }else {
-    showMessage("invalid bill amount");
-    console.log("invalid")
- 
-  }
+    showMessage("Invalid Bill Amount");
+    }
 });
-
-
-
-
-
-  function showMessage(msg){
+ 
+function showMessage(msg){
     message.style.display = "block"
     message.innerText = msg;
   }
- 
-
-
- function calculateChange(amountChange){
+  
+  function calculateChange(amountChange){
   for(let i =0; i<currency.length; i++){
   const numberOfNotes = Math.trunc(amountChange / currency[i]);
 amountChange %= currency[i];
