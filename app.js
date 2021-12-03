@@ -8,18 +8,26 @@ const noOfNotes = document.querySelectorAll(".no-of-notes")
 const currency = [2000,500,200,100,50,20,10,5,1];
 
 checkButton.addEventListener("click" , function validate() {
+  console.clear();
 
-  if(billAmount.value > 0){
-    if(userPay.value > billAmount.value){
-      const amountChange = userPay.value - billAmount.value;
-      calculateChange(amountChange);  
+  if((billAmount.value) > 0){
+    console.log(userPay > billAmount)
+  
+    if((userPay.value) >= (billAmount.value)){
+       const amountChange = (userPay.value - billAmount.value);
+       calculateChange(amountChange); 
+      console.log("continue") 
     } else {
-      showMessage("wanna wash plates");
+       showMessage("wanna wash plates?");
+      console.log("wash plates")
     }
   }else {
     showMessage("invalid bill amount");
+    console.log("invalid")
+ 
   }
 });
+
 
 
 
