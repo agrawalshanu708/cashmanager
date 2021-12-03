@@ -9,17 +9,18 @@ const currency = [2000,500,200,100,50,20,10,5,1];
 
 checkButton.addEventListener("click" , function validate() {
   console.clear();
+  let ba = Math.floor(billAmount.value);
+  let cg = Math.floor(userPay.value);
 
-  if((billAmount.value) > 0){
-    console.log(userPay > billAmount)
-  
-    if((userPay.value) >= (billAmount.value)){
-       const amountChange = (userPay.value - billAmount.value);
+  if(ba> 0){
+   
+    if( cg >= ba ){
+       const amountChange = (cg - ba);
        calculateChange(amountChange); 
-      console.log("continue") 
+      
     } else {
        showMessage("wanna wash plates?");
-      console.log("wash plates")
+     
     }
   }else {
     showMessage("invalid bill amount");
